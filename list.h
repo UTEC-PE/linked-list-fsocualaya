@@ -19,11 +19,32 @@ class List {
     public:
         List();
 
-        int front();
-        int back();
-        void push_front(T value);
-        void push_back(T value);
-        void pop_front();
+        int front(){
+            return head->data;
+        };
+        int back(){
+            return tail->data;
+        };
+        void push_front(T value) {
+            Node* temp = new Node;
+            temp->data = value;
+            temp->next = head;
+            head = temp;
+            delete temp;
+            nodes++;
+        };
+        void push_back(T value){
+            Node* node = new Node;
+            node->data = value;
+            tail->next= node;
+            tail = node;
+            node->next= nullptr;
+            nodes++;
+        };
+        void pop_front(){
+
+            };
+
         void pop_back();
         T get(int position);
         void concat(List<T> &other);
@@ -31,7 +52,11 @@ class List {
         int size();
         void print();
         void print_reverse();
-        void clear();
+        void clear(){
+            if(head)
+                head->killSelf();
+            head = nullptr;
+        };
         Iterator<T> begin();
         Iterator<T> end();
 
