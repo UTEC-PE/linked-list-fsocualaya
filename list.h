@@ -57,7 +57,6 @@ class List {
             (this->nodes)++;
         };
         void pop_front(){
-
             };
 
         void pop_back();
