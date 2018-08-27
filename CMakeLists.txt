@@ -7,7 +7,7 @@ set(CMAKE_CXX_STANDARD 11)
 set(SOURCE_FILES main.cpp)
 
 add_executable(linked_list_fsocualaya
-        iterator.h
+		iterator.h
         list.h
         node.h
         main.cpp)

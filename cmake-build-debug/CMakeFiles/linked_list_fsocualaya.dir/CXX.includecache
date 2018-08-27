@@ -6,7 +6,23 @@
 
 #IncludeRegexTransform: 
 
-/home/damin/Escritorio/linked-list-fsocualaya/main.cpp
+/home/pyxel/Desktop/UTEC/4to_semestre/AED/linked-list-fsocualaya/iterator.h
+node.h
+/home/pyxel/Desktop/UTEC/4to_semestre/AED/linked-list-fsocualaya/node.h
+
+/home/pyxel/Desktop/UTEC/4to_semestre/AED/linked-list-fsocualaya/list.h
 iostream
 -
+node.h
+/home/pyxel/Desktop/UTEC/4to_semestre/AED/linked-list-fsocualaya/node.h
+iterator.h
+/home/pyxel/Desktop/UTEC/4to_semestre/AED/linked-list-fsocualaya/iterator.h
+
+/home/pyxel/Desktop/UTEC/4to_semestre/AED/linked-list-fsocualaya/main.cpp
+iostream
+-
+list.h
+/home/pyxel/Desktop/UTEC/4to_semestre/AED/linked-list-fsocualaya/list.h
+
+/home/pyxel/Desktop/UTEC/4to_semestre/AED/linked-list-fsocualaya/node.h
 

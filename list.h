@@ -9,7 +9,7 @@ using namespace std;
 
 template <typename T>
 class List {
-    private:
+    public:
         Node<T>* head;
         Node<T>* tail;
         int nodes;
@@ -17,29 +17,44 @@ class List {
         void print_reverse(Node<T>* head);
 
     public:
-        List();
+        List(){
+            this->head = nullptr;
+            this->tail = nullptr;
+            this->nodes = 0;
+        };
 
-        int front(){
-            return head->data;
+        T front(){
+            if(head)
+                return this->head->data;
+            else
+                return -1;
         };
-        int back(){
-            return tail->data;
+
+        T back(){
+            if(tail)
+                return this->tail->data;
+            else
+                return -1;
         };
-        void push_front(T value) {
-            Node* temp = new Node;
-            temp->data = value;
-            temp->next = head;
-            head = temp;
-            delete temp;
-            nodes++;
-        };
-        void push_back(T value){
-            Node* node = new Node;
+
+		void push_front(T value) {
+		    auto* node = new Node<T>;
             node->data = value;
-            tail->next= node;
-            tail = node;
-            node->next= nullptr;
-            nodes++;
+            node->next = this->head;
+            if(!head){
+                this->tail = node;
+            }
+            this->head = node;
+            (this->nodes)++;
+		};
+        void push_back(T value){
+            auto* node = new Node<T>;
+            node->data = value;
+            if(!head){
+                this->head = node;
+            }
+            this->tail=node;
+            (this->nodes)++;
         };
         void pop_front(){
 
@@ -60,6 +75,6 @@ class List {
         Iterator<T> begin();
         Iterator<T> end();
 
-        ~List();
+        ~List()=default;
 };
 #endif
