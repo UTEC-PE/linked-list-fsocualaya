@@ -7,9 +7,8 @@ struct Node {
     struct Node* next;
 
     void killSelf(){
-        if(next){
-            next->killSelf();
-        }
+        this->next=nullptr;
+        this->data=NULL;
         delete this;
     };
 };
