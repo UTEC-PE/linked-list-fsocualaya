@@ -27,7 +27,7 @@ class List {
                 return this->head->data;
             else {
                 cout << "Can't reach head." << endl;
-                return -1;
+                return -1; // Mejor deberías retornar una excepción
             }
         };
 
@@ -36,7 +36,7 @@ class List {
                 return this->tail->data;
             else {
                 cout << "Can't reach tail" << endl;
-                return -1;
+                return -1; // Mejor deberías retornar una excepción
             }
         };
 
@@ -67,8 +67,8 @@ class List {
         };
         void pop_front(){
         	if(head){
-        		cout<<"head exists"<<endl;
-        		auto* temp = new Node<T>;
+        		cout<<"head exists"<<endl; // No es necesario imprimir
+        		auto* temp = new Node<T>; // No es necesario dar new
         		temp = this->head;
         		this->head = this->head->next;
         		(this->nodes)--;
@@ -82,7 +82,7 @@ class List {
         void pop_back(){
         	if(head){
         		auto* temp = head;
-        		cout<<"head exists"<<endl;
+        		cout<<"head exists"<<endl; // No es necesario imprimir
         		while(temp->next->next){
         			temp = temp->next;
         		}
@@ -96,8 +96,8 @@ class List {
         	}
         }
 
-        T get(int position);
-        void concat(List<T> &other){
+        T get(int position); // No se implementó
+        void concat(List<T> &other){ // Falta igualar tail al nuevo tail
         	this->tail->next = other.head;
         	this->nodes+=other.nodes;
         };
@@ -118,7 +118,7 @@ class List {
             }
             cout<<"}\n";
         };
-        void print_reverse();
+        void print_reverse(); // No se implementó
         void clear(){
             auto* temp = head;
             while(head) {
@@ -127,10 +127,11 @@ class List {
                 temp = temp->next;
             }
             head = nullptr;
+            // No estás igualando el contador de nodos a 0
         };
         Iterator<T> begin();
         Iterator<T> end();
 
-        ~List()=default;
+        ~List()=default; // Deberías haber limpiado tu lista aquí
 };
 #endif

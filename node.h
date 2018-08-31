@@ -6,9 +6,9 @@ struct Node {
     T data;
     struct Node* next;
 
-    void killSelf(){
-        this->next=nullptr;
-        this->data=NULL;
+    void killSelf(){ // Así no es la función
+        this->next=nullptr; // Estás borrando next, va a impedir que iteres
+        this->data=NULL; // Data no puede ser null
         delete this;
     };
 };
